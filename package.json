@@ -1,0 +1,11 @@
+{
+  "name": "monopoly",
+  "version": "1.0.0",
+  "description": "This is a Monopoly game without server",
+  "main": "index.js",
+  "scripts": {
+    "watch-style": "sass --watch ./src/index.scss ./src/index.css"
+  },
+  "author": "",
+  "license": "MIT"
+}

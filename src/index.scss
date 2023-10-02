@@ -1,0 +1,132 @@
+html, body {
+  margin: 0;
+  font-family: cursive;
+}
+
+/* The animation code */
+@keyframes rotation {
+  0%   {transform: rotate(0deg);}
+  50%  {transform: rotate(180deg);}
+  100% {transform: rotate(360deg);}
+}
+
+@keyframes blink {
+  0%   {opacity: 1;}
+  50%  {opacity: 0.7;}
+  100% {opacity: 1;}
+}
+
+.backgroud {
+  position: relative;
+
+  &__map {
+    display: block;
+    width: 100%;
+  }
+
+  &__home {
+    position: absolute;
+    width: 30px;
+    top: 60%;
+    left: 47.5%;
+  }
+
+  &__avatar1 {
+    position: absolute;
+    width: 30px;
+    transition-property: top, left;
+    transition-duration: 1s;
+    transition-timing-function: ease-in;
+  }
+
+  &__avatar2 {
+    position: absolute;
+    width: 30px;
+    transition-property: top, left;
+    transition-duration: 1s;
+    transition-timing-function: ease-in;
+  }
+
+  &__description {
+    display: none;
+    position: absolute;
+    background: white;
+    border: 1px solid gold;
+    box-shadow: 1px 1px 1px 3px rgba(0, 0, 0, 0.3);
+    width: 250px;
+    top: calc(60% - 50px);
+    left: calc(47.5% - 75px);
+
+    &__close {
+      width: 25px;
+      display: block;
+      float: right;
+      cursor: pointer;
+    }
+
+    &__title {
+      font-weight: bold;
+      margin: 24px 0 8px;
+      font-size: 18px;
+    }
+  }
+}
+
+.controllers {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+
+  &__current {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 5%;
+
+    span {
+      color: red;
+    }
+  }
+
+  &__head {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 60px;
+  }
+
+  &__controller {
+    width: 200px;
+    margin: 24px auto;
+    display: block;
+    cursor: pointer;
+    animation: rotation 1s infinite;
+  }
+
+  &__win {
+    width: 200px;
+    margin: 24px auto;
+    display: none;
+  }
+}
+
+.start {
+  position: fixed;
+  top: 0;
+  color: red;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+
+  &__text {
+    animation: blink 2s infinite;
+  }
+}
